@@ -1,11 +1,10 @@
 {
     "name":"simple-app",
     "version":"1.0.0",
-    "description":"smiple js app for github actions",
+    "description":"simple js app for github actions",
     "main":"src/app.js",
     "scripts": {
-        "test": "bash src/test.sh",
-
+        "test": "bash src/test.sh"
     },
     "dependencies": {}
 }
