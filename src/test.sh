@@ -1,4 +1,4 @@
-EXPECTED= "Hello Test"
+EXPECTED="Hello Test"
 
 OUTPUT=$(node -e "console.log(require('./src/app')('Test'))")
 
@@ -10,7 +10,7 @@ if [ "$OUTPUT" == "$EXPECTED" ]; then
 
 else
 
-    echo "Test failed Expected '$EXPECTED' BUT got '$OUTPUT'"
+    echo "Test failed Expected $EXPECTED, BUT got $OUTPUT"
 
     exit 1
 
