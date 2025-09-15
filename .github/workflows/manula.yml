@@ -1,0 +1,9 @@
+on: 
+# means manual workflow
+  workflow_dispatch:
+jobs: 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dploy application
+        run: echo "Deploying the application... "
