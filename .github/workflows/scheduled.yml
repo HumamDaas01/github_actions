@@ -1,0 +1,14 @@
+name: Daily Scheduled Task
+
+on:
+  schedule:
+    # <minute> <hour> <day-of-month> <month> <day-of-week>
+    # This runs at 03:00 UTC, which is 06:00 in Syria (UTC+3)
+    - cron: "0 3 * * *"
+
+jobs:
+  daily-task:
+    runs-on: ubuntu-latest # Corrected the typo here
+    steps:
+      - name: Print message
+        run: echo "Running the scheduled task at 6:00 AM Syria time!"
