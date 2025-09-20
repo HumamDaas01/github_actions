@@ -1,10 +1,7 @@
 name: CI with Matrix Strategy
 
 on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
+    workflow_dispatch:
 
 jobs:
 # /*
