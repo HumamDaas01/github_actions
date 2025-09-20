@@ -1,0 +1,32 @@
+name: CI with Matrix Strategy
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+# /*
+# / we want to check code on many environment(windows, mac, linux) 
+# / using matrix strategy
+# */
+  test-matrix:
+    name: Test on ${{ matrix.os }} with Node ${{ matrix.node_version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14.x, 15.x, 16.x]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node_version }}
+    
