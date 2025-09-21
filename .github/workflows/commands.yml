@@ -1,0 +1,12 @@
+on: 
+  workflow_dispatch:
+jobs:
+  commands_workflow:
+    runs-on: ubuntu-lates
+    steps:
+    - run: |
+        deprecated=true
+        if[[ deprrecated]]; then
+          echo "!!warning, Deprecated function found"
+        fi
+        
